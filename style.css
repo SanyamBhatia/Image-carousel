@@ -1,0 +1,43 @@
+/* Custom styles for horizontal carousel */
+.carousel-inner {
+  display: flex; /* Make the carousel items flex items */
+  flex-direction: row; /* Arrange items horizontally */
+}
+
+.carousel-item {
+  width: 100%; /* Ensure each slide takes up the full width */
+  transition: transform 0.6s ease; /* Add smooth transition effect */
+}
+
+.carousel-item.active {
+  transform: translateX(0); /* Set active slide to initial position */
+}
+
+/* Move inactive slides off screen */
+.carousel-item-next,
+.carousel-item-prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-item-next {
+  transform: translateX(100%); /* Move next slide off to the right */
+}
+
+.carousel-item-prev {
+  transform: translateX(-100%); /* Move previous slide off to the left */
+}
+
+/* Custom styles for horizontal carousel with responsive images */
+.carousel-item img {
+  max-width: 100%; /* Ensure images don't exceed the width of the screen */
+  max-height: 100vh; /* Set the maximum height of the images to the height of the viewport */
+  width: auto; /* Allow images to scale proportionally */
+  height: auto; /* Allow images to scale proportionally */
+}
+
+/* Custom styles for horizontal carousel with faster transition */
+.carousel-item {
+  transition: transform 0.3s ease; /* Reduce transition duration for faster response */
+}
